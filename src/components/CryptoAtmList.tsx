@@ -6,11 +6,8 @@ const CryptoAtmList: React.FC = () => {
   const [term, setTerm] = useState("");
   const { searchCryptoAtms } = useActions();
   const { data, error, loading } = useTypedSelector(
-    (state: any) => state.cryptoAtms
+    (state) => state.cryptoAtms
   );
-  // const state = useSelector((state) => state);
-
-  console.log(data);
 
   const onSubmit = (e: any) => {
     e.preventDefault();
@@ -23,6 +20,9 @@ const CryptoAtmList: React.FC = () => {
         <input value={term} onChange={(e) => setTerm(e.target.value)} />
         <button>Search</button>
       </form>
+      {error && <h3>{error}</h3>}
+      {loading && <h3>Loading...</h3>}
+      {!error && !loading && data}
     </div>
   );
 };

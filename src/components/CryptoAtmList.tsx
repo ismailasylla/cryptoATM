@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import { useActions } from "../hooks/useActions";
 
-const RepositoriesList: React.FC = () => {
+const CryptoAtmList: React.FC = () => {
   const [term, setTerm] = useState("");
-  const { searchRepositories } = useActions();
+  const { searchCryptoAtms } = useActions();
   const { data, error, loading } = useTypedSelector(
-    (state: any) => state.repositories
+    (state: any) => state.cryptoAtms
   );
   // const state = useSelector((state) => state);
 
@@ -14,7 +14,7 @@ const RepositoriesList: React.FC = () => {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    searchRepositories(term);
+    searchCryptoAtms(term);
   };
 
   return (
@@ -27,4 +27,4 @@ const RepositoriesList: React.FC = () => {
   );
 };
 
-export default RepositoriesList;
+export default CryptoAtmList;

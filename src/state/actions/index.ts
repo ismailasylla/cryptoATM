@@ -1,14 +1,14 @@
 import { ActionType } from "../action-types";
 
 interface SearchRepositoriesAction {
-  type: ActionType.SEARCH_REPOSITORIES;
+  type: ActionType.SEARCH_CRYPTOATMS;
 }
 interface SearchRepositoriesSuccessAction {
-  type: ActionType.SEARCH_REPOSITORIES_SUCCESS;
+  type: ActionType.SEARCH_CRYPTOATMS_SUCCESS;
   payload: string[];
 }
 interface SearchRepositoriesErrorAction {
-  type: ActionType.SEARCH_REPOSITORIES_ERROR;
+  type: ActionType.SEARCH_CRYPTOATMS_ERROR;
   payload: string;
 }
 

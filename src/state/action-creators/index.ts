@@ -10,14 +10,14 @@ export const searchCryptoAtms = (term: string) => {
     });
 
     try {
-      const { data } = await axios.get("https://api.coincap.io/v2/assets", {
+      const { data } = await axios.get(process.env.REACT_APP_API_URL || "", {
         params: {
           text: term
         }
       });
 
       const names = data.objects.map((result: any) => {
-        return result.package.name;
+        return result.name;
       });
 
       dispatch({

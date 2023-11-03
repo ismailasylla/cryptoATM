@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import repositoriesReducer from "./repositoriesReducer";
+import cryptoAtmsReducer from "./cryptoAtmsReducer";
 
 const reducers = combineReducers({
-  repositories: repositoriesReducer
+  cryptoAtms: cryptoAtmsReducer
 });
 
 export default reducers;
+
+export type RootState = ReturnType<typeof reducers>;

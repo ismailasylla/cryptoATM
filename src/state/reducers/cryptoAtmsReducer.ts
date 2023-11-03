@@ -1,7 +1,7 @@
 import { Action } from "../actions";
 import { ActionType } from "../action-types";
 
-interface RepositoriesState {
+interface CryptoAtmState {
   loading: boolean;
   error: string | null;
   data: string[];
@@ -14,15 +14,15 @@ const initialState = {
 };
 
 const reducer = (
-  state: RepositoriesState = initialState,
+  state: CryptoAtmState = initialState,
   action: Action
-): RepositoriesState => {
+): CryptoAtmState => {
   switch (action.type) {
-    case ActionType.SEARCH_REPOSITORIES:
+    case ActionType.SEARCH_CRYPTOATMS:
       return { loading: true, error: null, data: [] };
-    case ActionType.SEARCH_REPOSITORIES_SUCCESS:
+    case ActionType.SEARCH_CRYPTOATMS_SUCCESS:
       return { loading: false, error: null, data: action.payload };
-    case ActionType.SEARCH_REPOSITORIES_ERROR:
+    case ActionType.SEARCH_CRYPTOATMS_ERROR:
       return { loading: false, error: action.payload, data: [] };
     default:
       return state;
